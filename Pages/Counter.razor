@@ -1,0 +1,91 @@
+﻿@page "/counter"
+
+<p> First number </p>
+<input style="margin-bottom:15px" inputmode="numeric" @bind-value="firstNumber" />
+
+
+<p> Second Number </p>
+<input style="margin-bottom:15px" inputmode="numeric" @bind-value="secondNumber" />
+<button @onclick="Summa">Summa</button>
+<button @onclick="Difference">Difference</button>
+<button @onclick="Multiplication">Multiplication</button>
+<button @onclick="Division">Division</button>
+
+
+<p> Result</p>
+<h2> @result</h2>
+
+
+<button @onclick="Summa">Summa</button>
+<h1 style="color:red">@errorMessage</h1>
+
+@code {
+    private string firstNumber { get; set; } = "111";
+
+
+    private string secondNumber { get; set; } = "222";
+
+    private int result { get; set; } = 0;
+
+    private void Summa()
+    {
+        var firstNumberResult = 0;
+        var secondNumberResult = 0;
+        if (int.TryParse(firstNumber, out firstNumberResult) &
+        int.TryParse(secondNumber, out secondNumberResult))
+        {
+            result = int.Parse(firstNumber) + int.Parse(secondNumber);
+            errorMessage = "";
+        }
+        else
+        {
+            errorMessage = "Числа ЫОВЛАР ЫЖВАОЛРВЫАВЫАРОЛВЫВ АЛыраывра";
+        };
+    }
+    private void Difference() {
+        var firstNumberResult = 0;
+        var secondNumberResult = 0;
+        if (int.TryParse(firstNumber, out firstNumberResult) &
+        int.TryParse(secondNumber, out secondNumberResult))
+        {
+            result = int.Parse(firstNumber) - int.Parse(secondNumber);
+            errorMessage = "";
+        }
+        else
+        {
+            errorMessage = "Числа ЫОВЛАР ЫЖВАОЛРВЫАВЫАРОЛВЫВ АЛыраывра";
+        }
+    }
+    private void Multiplication()
+    {
+        var firstNumberResult = 0;
+        var secondNumberResult = 0;
+        if (int.TryParse(firstNumber, out firstNumberResult) &
+        int.TryParse(secondNumber, out secondNumberResult))
+        {
+            result = int.Parse(firstNumber) * int.Parse(secondNumber);
+            errorMessage = "";
+        }
+        else
+        {
+            errorMessage = "Числа ЫОВЛАР ЫЖВАОЛРВЫАВЫАРОЛВЫВ АЛыраывра";
+        }
+    }
+    private void Division()
+    {
+        var firstNumberResult = 0;
+        var secondNumberResult = 0;
+        if (int.TryParse(firstNumber, out firstNumberResult) &
+        int.TryParse(secondNumber, out secondNumberResult))
+        {
+            result = int.Parse(firstNumber) / int.Parse(secondNumber);
+            errorMessage = "";
+        }
+        else
+        {
+            errorMessage = "Числа ЫОВЛАР ЫЖВАОЛРВЫАВЫАРОЛВЫВ АЛыраывра";
+        }
+    }
+
+    private string errorMessage { get; set; } = "";
+}
