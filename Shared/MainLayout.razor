@@ -1,13 +1,23 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+
 
 <div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">Phote Store</a>
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li> <a href="#"> Каталог </a></li>
+                    <li> <a href="#"> Оплата и Доставка </a></li>
+                    <li> <a href="#"> Акции и скидки </a></li>
+                    <li> <a href="#"> Контакты </a></li>
+                </ul>
+                <a href="#" class="callback"> Обратный звонок</a>
+            </div>
+        </div>
+    </nav>
+
 
     <div class="content px-4">
         @Body
